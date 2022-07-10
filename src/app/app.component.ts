@@ -8,7 +8,7 @@ import { ListModel } from 'src/app/shared/models/list.model'
 })
 export class AppComponent {
   serverElements: ListModel[] =[
-    new ListModel('this.type','this.newServerName','this.newServerContent')
+    new ListModel('','this.newServerName','this.newServerContent')
   ]
   newServerName = '';
   newServerContent = '';

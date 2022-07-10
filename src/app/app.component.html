@@ -10,21 +10,27 @@
       <br>
       <button
         class="btn btn-warning"
+        (click)="onAddGermanyServer()"
         >افزودن سرور آلمان</button>
       <button
         class="btn btn-primary"
+        (click)="onAddIranianServer()"
       >افزودن سرور ایران</button>
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div
+    class="row">
     <div class="col-xs-12">
       <div
-      class="panel panel-default"
+      class="card"
       *ngFor="let element of serverElements">
-        <div class="panel-heading">{{ element.name }}</div>
-        <div class="panel-body">
-          <p>
+        <div
+          *ngIf="element.name.length"
+          class="card-header">{{ element.name }}</div>
+        <div
+          class="card-body">
+          <p *ngIf="element.content.length">
             <strong *ngIf="element.type === 'iran'" style="color: red">{{ element.content }}</strong>
             <em *ngIf="element.type === 'germany'">{{ element.content }}</em>
           </p>
